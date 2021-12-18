@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% block body %} 
+<div class="container ">
+    <table class="table">
+        <tbody>
+    
+        <tr>
+          <td><i>Title:</i></th>
+          <td><h5>{{blog.title}}</h5></th>
+         </tr>
+         <tr>
+            <td><i>Author:</i> </th>
+            <td><strong>{{blog.author}}</strong></th>
+        </tr>
+        <tr>
+            <td><i>Content:</i></th>
+            <td><strong>{{blog.content}}</strong></th>
+        </tr>
+        <tr>
+            <td><i>Published Date:</i></td>
+            <td><strong>{{blog.pub_date}}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="container">
+    <a style="margin:2rem 2rem"href="/edit/{{blog.block_id}}" class="btn btn-primary">Edit</a>
+    <a href="/delete/{{blog.block_id}}" class="btn btn-primary">Delete</a>
+    </div>
+{% endblock body %}
+
+    

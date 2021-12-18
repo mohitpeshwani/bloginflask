@@ -1,0 +1,31 @@
+{% extends 'main.html' %} 
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<div class="container">
+    <h1 class="text-center text-white-30" style="padding-top:2rem ;">Signup Here</h1>
+    
+    <form action="/login" method= 'POST' class=' container bg-black' style="border-style:outset; margin-top: 2rem; margin-bottom: 2rem; padding-bottom: 2rem; ">
+        <div class="mb-1 mt-3 col-md-5">
+          <label for="text" class="form-label">Username:</label>
+          <input type="text" class="form-control" id="email" placeholder="Enter email" name="uname">
+        </div>
+        <div class="mb-1 mt-3 col-md-5" >
+          <label for="pwd" class="form-label">Password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+        </div>
+        
+        <button  type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  {% endblock body %}

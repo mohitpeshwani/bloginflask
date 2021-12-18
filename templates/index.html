@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+{% for blog in data %}
+<div class="container card flex-md-row mb-4 box-shadow h-md-250">
+    <div class="container card-body d-flex flex-column align-items-start">
+      <h3 class="mb-0">
+        <a class="text-dark">{{blog.title}}</a>
+      </h3>
+      <div class="mb-1 text-muted">{{blog.author}}</div>
+      <p class="card-text mb-auto">{{blog.content}}</p>
+      <div class="mb-1 text-muted">{{blog.pub_date}}</div>
+      <a href="/blog_detail/{{blog.block_id}}" class="btn btn-primary">Continue reading</a>
+    </div>
+    </div>
+  {% endfor %} 
+{% endblock body %} 
