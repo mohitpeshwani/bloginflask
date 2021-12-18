@@ -11,7 +11,7 @@ Front-end is taken from the bootstrap website.<br><hr>
 <strong>Install SQLALCHEMY and create Database </strong>
 <ul>
 <li>to install sql-alchemy<strong> $ pip install flask-sqlalchemy</strong></li>
-<li>In flask app we have to config <strong> app.config['SQL_DATABASE_URI']=""sqlite:\\\myuser.db</strong></li>
+<li>In flask app we have to config <strong> app.config['SQL_DATABASE_URI']="sqlite:\\\myuser.db</strong>"</li>
 <li>To create the database we got to the python <strong> <br>from app import db <br> db.create_all<br> </strong></li>
 <li>To create the model we do <strong><br> from app import User,Blog <br>User.query.all()<br>Blog.query.all()<br></strong></li>
 <li>we have to commite it <strong><br>db.session.commit()<br></strong></li></ul>
